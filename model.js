@@ -4,7 +4,7 @@ const StudentSchema = new mongoose.Schema(
   {
     studentsFirstName: String,
     studentsLastName: String,
-    studentsActive: String,
+    studentsActive: Boolean,
     age: Number,
   },
   {
