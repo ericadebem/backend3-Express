@@ -25,6 +25,15 @@ export const getAllStudents = async (req, res) => {
     const students = await Students.find();
     res.status(201).json({ students });
   } catch (error) {
+    console.error(error.msg);
+    res.status(500).json({msg: "Error occurred"});
+  }
+}
+export const deleteStudent = async (req, res) => {
+  try {
+    const student = await Students.findByIdAndDelete(req.params.id);
+    res.status(201).json({ student });
+  }catch (error) {
     console.log(error.msg);
     res.status(500).json(error);
   }
